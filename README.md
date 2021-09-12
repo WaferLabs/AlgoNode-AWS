@@ -20,7 +20,7 @@ The most crucial aspect to successfully deploying a node on AWS is by properly d
 \
 Here are some examples of configuration files that may be used to deploy an Algorand Node.
 
-#### Mainnet Fastcatchup Node
+### Mainnet Fastcatchup Node
 In this scenario, the goal is to deploy a fastcatchup node to AWS. The most common use case for this is usually to particpate in consensus. Here is an example of what the JSON config might look like:
 
 ```json
@@ -36,7 +36,7 @@ In this scenario, the goal is to deploy a fastcatchup node to AWS. The most comm
 ```
 Since this is fastcatchup, there is no need to use the indexer or a custom EBS volume since the default volume bundled with the EC2 Instance is usally more than enough. The node data is stored in the default directory: `/var/lib/algorand`.
 
-#### Testnet Archival Node w/ Indexer
+### Testnet Archival Node w/ Indexer
 In this scenario, the goal is to deploy an Archival node on Testnet with an Indexer. The most common use case for this usually development purposes. Here is an example of what the JSON config might look like:
 
 ```json
@@ -57,19 +57,19 @@ The hardware recommendations listed here are based off my own personal experienc
 
 The published AMI and subsequent node configuration specified here is primarily intended to be used on ARM based EC2 Instances. While Algorand supports both x86/x64 and ARM architectures, I have personally found additional cost savings by as much as 35% using ARM over x86/x64 on AWS.
 
-#### Fastcatchup Node
+### Fastcatchup Node
 - **t4g.micro** - This EC2 instance is recommended for running a fastcatchup node. Fastcatchup nodes are relatively light in workload and don't require any external resources. The default 8GB volume that comes attached to the instance should be enough.
 
 For additional information regarding fastcatchup nodes, consult the section under Node Requirements here: https://algorand.foundation/algorand-protocol/network
 
-#### Archival Node w/ Indexer
+### Archival Node w/ Indexer
 The resource requirements for this node changes depending on whether the node is catching up to the latest block or all caught up. Catchup is more resource intensive as the node attempts to validate every block on the blockchain. Catchup times will vary based on the chain you are targeting.
 
 - **c6g.large** - This compute optimized EC2 instance is recommended during catchup
 - **t4g.micro** - This EC2 instance is recommended after the node is fully caught up.
 - **EBS Volume** - It recommended to separately provision an EBS Volume to store archival node data. For relative sizes of the volume, please consult: https://howbigisalgorand.com/
 
-#### Relay Node
+### Relay Node
 Relay nodes are the most intensive node operation as they serve as network hubs and maintain connections to many other nodes. 
 
 - **c6g.2xlarge** - This compute optimized instance is the **minimum** required instance for running a relay node. Better performance may be obtained on larger instance types
