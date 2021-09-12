@@ -1,0 +1,3 @@
+{
+    "Include": ["londong-algorand-test-1.algorand-testnet.network:4161", "relay-virginia-testnet-algorand.algorand-testnet.network:4161", "singaporeg-algorand-test-2.algorand-testnet.network:4161", "londong-algorand-test-2.algorand-testnet.network:4161", "oregong-algorand-test-1.algorand-testnet.network:4161", "r19.algorand-testnet.network:4161", "relay-switzerland1-testnet-algorand.algorand-testnet.network:80", "singaporeg-algorand-test-1.algorand-testnet.network:4161"]
+}
