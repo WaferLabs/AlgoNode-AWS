@@ -1,7 +1,7 @@
 # AlgoNode AWS
 This repo contains the source files for the latest AMI (Amazon Machine Image) Algorand Node build. It is updated frequently to reflect the latest releases of the indexer and algod node. You can view our AWS Marketplace page here: LINK_HERE
 
-The AMI when launched on AWS is configured to clone this repo during startup and run the [setup.sh](setup.sh) script which will setup the node as defined by the [configuration file](#configuration-file). For more information on how to get started with an Algorand Node on AWS, please read the following guide: LINK_HERE
+The AMI when launched on AWS is configured to clone this repo during startup and run the [setup.sh](setup.sh) script which will setup the node as defined by the [configuration file](#configuration-file). For more information on how to get started with an Algorand Node on AWS, please read the following guide: https://developer.algorand.org/tutorials/deploying-an-algorand-node-on-amazon-web-services/
 
 Below you will find additional information regarding proper node configuration as well as optimal hardware provisioning based on use case.
 
