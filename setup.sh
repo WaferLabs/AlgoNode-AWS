@@ -91,7 +91,7 @@ ProtectSystem=full
 ProtectHome=true
 
 [Install]
-WantedBy=multi-user.target" > /usr/lib/systemd/system/algorand.service
+WantedBy=multi-user.target" > /lib/systemd/system/algorand.service
 systemctl daemon-reload
 
 #### Configure Algorand Node
@@ -147,7 +147,7 @@ ProtectSystem=full
 ProtectHome=true
 
 [Install]
-WantedBy=multi-user.target" > /usr/lib/systemd/system/algorand-indexer.service
+WantedBy=multi-user.target" > /lib/systemd/system/algorand-indexer.service
     systemctl daemon-reload
     systemctl enable algorand-indexer
     systemctl start algorand-indexer.service
