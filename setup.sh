@@ -35,15 +35,15 @@ if [ $chain == "betanet" ]; then
     wget -q https://releases.algorand.com/channel/beta/algorand-devtools_beta_linux-arm64_3.0.1.deb
     dpkg -i -E algorand-devtools_beta_linux-arm64_3.0.1.deb
 else
-    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9ed06b2b_2.10.1/algorand_stable_linux-arm64_2.10.1.deb
-    dpkg -i -E algorand_stable_linux-arm64_2.10.1.deb
+    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand_stable_linux-arm64_3.0.1.deb
+    dpkg -i -E algorand_stable_linux-arm64_3.0.1.deb
 
-    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9ed06b2b_2.10.1/algorand-devtools_stable_linux-arm64_2.10.1.deb
-    dpkg -i -E algorand-devtools_stable_linux-arm64_2.10.1.deb
+    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand-devtools_stable_linux-arm64_3.0.1.deb
+    dpkg -i -E algorand-devtools_stable_linux-arm64_3.0.1.deb
 fi
 
-wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9eb48f21_2.6.2/algorand-indexer_2.6.2_arm64.deb
-dpkg -i -E algorand-indexer_2.6.2_arm64.deb
+wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9eab18bc_2.7.1/algorand-indexer_2.7.1_arm64.deb
+dpkg -i -E algorand-indexer_2.7.1_arm64.deb
 
 systemctl stop algorand.service
 
