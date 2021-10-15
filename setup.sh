@@ -42,8 +42,8 @@ else
     dpkg -i -E algorand-devtools_stable_linux-arm64_3.0.1.deb
 fi
 
-wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9eab18bc_2.7.1/algorand-indexer_2.7.1_arm64.deb
-dpkg -i -E algorand-indexer_2.7.1_arm64.deb
+wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9e971d0a_2.6.4/algorand-indexer_2.6.4_arm64.deb
+dpkg -i -E algorand-indexer_2.6.4_arm64.deb
 
 systemctl stop algorand.service
 
