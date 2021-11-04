@@ -29,15 +29,15 @@ export INSTANCE_ID=$instance_id
 #### Install Algorand + Devtools + Indexer
 #### ============================================
 if [ $chain == "betanet" ]; then
-    wget -q https://releases.algorand.com/channel/beta/algorand_beta_linux-arm64_3.0.1.deb
-    dpkg -i -E algorand_beta_linux-arm64_3.0.1.deb
-
-    wget -q https://releases.algorand.com/channel/beta/algorand-devtools_beta_linux-arm64_3.0.1.deb
-    dpkg -i -E algorand-devtools_beta_linux-arm64_3.0.1.deb
-else
     wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand_stable_linux-arm64_3.0.1.deb
     dpkg -i -E algorand_stable_linux-arm64_3.0.1.deb
 
+    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand-devtools_stable_linux-arm64_3.0.1.deb
+    dpkg -i -E algorand-devtools_stable_linux-arm64_3.0.1.deb
+else
+    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand_stable_linux-arm64_3.0.1.deb
+    dpkg -i -E algorand_stable_linux-arm64_3.0.1.deb
+    
     wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand-devtools_stable_linux-arm64_3.0.1.deb
     dpkg -i -E algorand-devtools_stable_linux-arm64_3.0.1.deb
 fi
