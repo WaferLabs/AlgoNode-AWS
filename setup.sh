@@ -26,26 +26,25 @@ export AWS_DEFAULT_REGION=$aws_region
 export INSTANCE_ID=$instance_id
 
 
+curl -O https://releases.algorand.com/key.pub
+apt-key add key.pub
+
 #### Install Algorand + Devtools + Indexer
 #### ============================================
 if [ $chain == "betanet" ]; then
-    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand_stable_linux-arm64_3.0.1.deb
-    dpkg -i -E algorand_stable_linux-arm64_3.0.1.deb
-
-    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand-devtools_stable_linux-arm64_3.0.1.deb
-    dpkg -i -E algorand-devtools_stable_linux-arm64_3.0.1.deb
+    add-apt-repository "deb [arch=amd64] https://releases.algorand.com/deb/ beta main"
+    apt-get update
+    apt-get install -y algorand-beta algorand-devtools-beta
 else
-    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand_stable_linux-arm64_3.0.1.deb
-    dpkg -i -E algorand_stable_linux-arm64_3.0.1.deb
-    
-    wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/stable/f9eab840b_3.0.1/algorand-devtools_stable_linux-arm64_3.0.1.deb
-    dpkg -i -E algorand-devtools_stable_linux-arm64_3.0.1.deb
+    add-apt-repository "deb [arch=amd64] https://releases.algorand.com/deb/ stable main"
+    apt-get update
 fi
 
-wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9e971d0a_2.6.4/algorand-indexer_2.6.4_arm64.deb
-dpkg -i -E algorand-indexer_2.6.4_arm64.deb
+wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9e6a6841_2.6.5/algorand-indexer_2.6.5_amd64.deb
+dpkg -i -E algorand-indexer_2.6.5_amd64.deb
 
 systemctl stop algorand.service
+systemctl stop algorand-indexer.service
 
 #### Configure Filesystem
 #### ============================================
@@ -117,9 +116,9 @@ else
 
     if [ ! -f $algoDir/phonebook.json ]; then
         if [ $chain == "mainnet" ]; then
-            mv /tmp/REPO/mainnet_phonebook.json $algoDir/phonebook.json
+            mv /tmp/AlgoNode-AWS/mainnet_phonebook.json $algoDir/phonebook.json
         elif [ $chain == "betanet" ]; then
-            mv /tmp/REPO/betamet_phonebook.json $algoDir/phonebook.json
+            mv /tmp/AlgoNode-AWS/betanet_phonebook.json $algoDir/phonebook.json
         fi
 
         chown algorand:algorand $algoDir/phonebook.json
