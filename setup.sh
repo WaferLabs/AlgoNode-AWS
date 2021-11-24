@@ -38,6 +38,7 @@ if [ $chain == "betanet" ]; then
 else
     add-apt-repository "deb [arch=amd64] https://releases.algorand.com/deb/ stable main"
     apt-get update
+    apt-get install -y algorand algorand-devtools
 fi
 
 wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9e6a6841_2.6.5/algorand-indexer_2.6.5_amd64.deb
