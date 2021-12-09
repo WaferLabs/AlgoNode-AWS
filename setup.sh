@@ -59,10 +59,10 @@ if [ $algoDir != "/var/lib/algorand" ]; then
         aws ec2 attach-volume --volume-id $ebsVolumeID --instance-id $INSTANCE_ID --device /dev/sdk
         sleep 10
 
-        mount /dev/nvme1n1 $algoDir
+        mount /dev/xvdk $algoDir
         if [ $? -ne 0 ]; then
-            mkfs -t ext4 /dev/nvme1n1
-            mount /dev/nvme1n1 $algoDir
+            mkfs -t ext4 /dev/xvdk
+            mount /dev/xvdk $algoDir
         fi
     fi
 fi
