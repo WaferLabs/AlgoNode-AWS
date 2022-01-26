@@ -41,8 +41,8 @@ else
     apt-get install -y algorand algorand-devtools
 fi
 
-wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9e59acb1_2.8.0/algorand-indexer_2.8.0_amd64.deb
-dpkg -i -E algorand-indexer_2.8.0_amd64.deb
+wget -q http://algorand-dev-deb-repo.s3-website-us-east-1.amazonaws.com/releases/indexer/f9e2cce20_2.6.6/algorand-indexer_2.6.6_amd64.deb
+dpkg -i -E algorand-indexer_2.6.6_amd64.deb
 
 systemctl stop algorand.service
 systemctl stop algorand-indexer.service
